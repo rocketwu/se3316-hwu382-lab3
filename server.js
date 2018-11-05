@@ -64,7 +64,68 @@ cartsRoute.get((req, res)=>{
     });
 });
 
+router.route('/carts/:item_id/quantity').put((req, res)=>{
+    //update quantity
+    //use PUT https://se3316-hwu382-lab3-hwu382.c9users.io/carts/id/quantity
+    //Body attribute: quantity
+    Cart.findById(req.params.item_id, (err,item)=>{
+        if(err) res.send(err);
+        else{
+            let cQuantity = Number(req.body.quantity);
+            if (cQuantity<0) {
+                res.json({message: 'Invalid Quantity!'});
+            }
+            else{
+                item.quantity = cQuantity;
+                item.save((err)=>{
+                    if (err) res.send(err);
+                    else res.json({message: 'quantity updated! '})
+                });
+            }
+        }
+    });
+});
 
+
+router.route('/carts/:item_id/tax').put((req, res)=>{
+    //update tax
+    //use PUT https://se3316-hwu382-lab3-hwu382.c9users.io/carts/id/tax
+    //Body attribute: tax
+    Cart.findById(req.params.item_id, (err,item)=>{
+        if(err) res.send(err);
+        else{
+            let cTax = Number(req.body.tax);
+            if (cTax<0) {
+                res.json({message: 'Invalid Tax!'});
+            }
+            else{
+                item.tax = cTax;
+                item.save((err)=>{
+                    if (err) res.send(err);
+                    else res.json({message: 'tax updated! '})
+                });
+            }
+        }
+    });
+});
+
+router.route('/carts/:item_id').delete((req, res)=>{
+    //delete item
+    //use DELETE https://se3316-hwu382-lab3-hwu382.c9users.io/carts/id
+    Cart.remove({_id: req.params.item_id}, (err, item)=>{
+        if (err) res.send(err);
+        else res.json({message: 'successfully deleted!'});
+    });
+})
+
+.get((req, res)=>{
+    //get single item
+    //use GET https://se3316-hwu382-lab3-hwu382.c9users.io/carts/id
+    Cart.findById(req.params.item_id, (err, item)=>{
+        if (err) res.send(err);
+        else res.json(item);
+    });
+});
 
 router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
