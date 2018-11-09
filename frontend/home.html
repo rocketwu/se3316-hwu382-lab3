@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SE 3316 - Lab 3</title>
+    <meta charset="UTF-8">
+    <script type='text/javascript' src='client.js'></script>
+</head>
+<body onload="load()">
+    <h1>
+        SE3316 - Lab3
+    </h1>
+    <div>
+        
+        <hr style="height : 10px" />
+        
+        <h3>Create Item Function</h3>
+        <form class="creating">
+            <span>Item Name</span>
+            <input id="createName" type="text" style="width: 50px; margin-right: 5px">
+            <br/>
+            <span>Item Price</span>
+            <input id="createPrice" type="text" style="width: 50px; margin-right: 5px">
+            <br/>
+            <span>Item Tax</span>
+            <input id="createTax" type="text" style="width: 50px; margin-right: 5px">
+            <br/>
+            <input type="button" value="Create" onclick="createItem()">
+            
+        </form>
+        
+        <hr style="height : 10px" />
+        
+        <h3>Get All Function</h3>
+        <button onclick='getAllItem()'>getAll</button>
+        <div id="allItem">
+        </div>
+        
+        <hr style="height : 10px" />
+        
+        <h3>Delete Item Function</h3>
+        <button onclick='deleteItem()'>delete</button>
+        <div>
+            <select id="itemToDelete"></select>
+        </div>
+        
+        
+        <hr style="height : 10px" />
+        
+        <h3>Get Single Item Function</h3>
+        <button onclick='findItem()'>find</button>
+        <div>
+            <select id="itemToFind"></select>
+        </div>
+        <div id="singleItem">
+        </div>
+        
+        <hr style="height : 10px" />
+        
+        <h3>Update Quantity Function</h3>
+        <button onclick='quantityItem()'>Quantity</button>
+        <div>
+            <select id="itemToQuantity"></select>
+        </div>
+        <input type="number" id="updateQ"/>
+        
+        
+        <hr style="height : 10px" />
+        
+        <h3>Update Tax Function</h3>
+        <button onclick='taxItem()'>Tax</button>
+        <div>
+            <select id="itemToTax"></select>
+        </div>
+        <input type="number" id="updateT"/>
+        
+        
+    </div>
+    
+</body>
+</html>

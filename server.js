@@ -26,7 +26,6 @@ cartsRoute.post((req, res)=>{
     let cName = req.body.name;
     let cPrice = Number(req.body.price);
     let cTax = Number(req.body.tax);
-    
     if ((!cName)||(!cPrice)) {
         //name or price is empty discard request
         res.json({message: 'Name/Price cannot be empty!'});
@@ -128,8 +127,10 @@ router.route('/carts/:item_id').delete((req, res)=>{
 });
 
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+    res.sendFile('/frontend/home.html', { root: __dirname });   //main page will be home
 });
+
+app.use('/',express.static('frontend'));    //provide access to get client.js
 
 
 app.use(router);
