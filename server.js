@@ -143,7 +143,7 @@ router.route('/carts/:item_id').delete((req, res)=>{
 });
 
 router.get('/', function(req, res) {
-    res.sendFile('/frontend/home.html', { root: __dirname });   //main page will be home
+    res.sendFile('/frontend/src/index.html', { root: __dirname });   //main page will be home
 });
 
 app.use('/',express.static('frontend'));    //provide access to get client.js
