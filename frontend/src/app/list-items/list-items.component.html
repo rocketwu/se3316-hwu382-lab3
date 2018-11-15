@@ -1,0 +1,13 @@
+<h2>Item list</h2>
+<button (click)="getItems()">refresh</button>
+<ul>
+  <li *ngFor="let item of items">
+    <ul>
+      <li>{{item.name}}</li>
+      <li>Price: {{item.price}}</li>
+      <li>Quantity: {{item.quantity}}</li>
+      <li>Tax: {{item.tax}}</li>
+    </ul>
+  </li>
+</ul>
+

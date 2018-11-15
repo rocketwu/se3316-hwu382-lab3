@@ -1,0 +1,29 @@
+commit 70d8579a1bf7a30b74e99cd0bd20ece85a2d34a9
+Author: Huiyuan Wu <hwu382@uwo.ca>
+Date:   Fri Nov 9 18:22:41 2018 +0000
+
+    finish frontend work
+
+commit 9e05867918a92d5636b32d2e47b86843ecf947cf
+Author: Huiyuan Wu <hwu382@uwo.ca>
+Date:   Mon Nov 5 18:16:41 2018 +0000
+
+    finish basic functions
+
+commit 8a15b3c7acebe8bb96e217103db4fcfbc32f91e4
+Author: Huiyuan Wu <hwu382@uwo.ca>
+Date:   Mon Nov 5 15:24:51 2018 +0000
+
+    built cart schema, finish add item function and get all items function
+
+commit 7438a67de8e27b6c7ea9d3a82570e2313232ff31
+Author: Huiyuan Wu <hwu382@uwo.ca>
+Date:   Mon Nov 5 03:11:07 2018 +0000
+
+    prepare workspace
+
+commit d846d32977393cc2435e653b91c73ff9214be78e
+Author: hwu382 <30697044+rocketwu@users.noreply.github.com>
+Date:   Sun Nov 4 21:46:26 2018 -0500
+
+    Initial commit
