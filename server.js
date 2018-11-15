@@ -50,7 +50,11 @@ cartsRoute.post((req, res)=>{
     
     cart.save((err)=>{
         if (err) res.send(err);
-        else res.json({message:'Item created!'});
+        else {
+            res.header('Access-Control-Allow-Origin','*');
+            res.json({message:'Item created!'});
+            
+        }
     });
 });
 
@@ -59,7 +63,10 @@ cartsRoute.get((req, res)=>{
     //use GET https://se3316-hwu382-lab3-hwu382.c9users.io/carts
     Cart.find((err, cart)=>{
         if(err) res.send(err);
-        else res.json(cart);
+        else {
+            res.header('Access-Control-Allow-Origin','*');
+            res.json(cart);
+        }
     });
 });
 
@@ -78,7 +85,10 @@ router.route('/carts/:item_id/quantity').put((req, res)=>{
                 item.quantity = cQuantity;
                 item.save((err)=>{
                     if (err) res.send(err);
-                    else res.json({message: 'quantity updated! '})
+                    else {
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.json({message: 'quantity updated! '});
+                    }
                 });
             }
         }
@@ -101,7 +111,11 @@ router.route('/carts/:item_id/tax').put((req, res)=>{
                 item.tax = cTax;
                 item.save((err)=>{
                     if (err) res.send(err);
-                    else res.json({message: 'tax updated! '})
+                    else {
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.json({message: 'tax updated! '});
+                        
+                    }
                 });
             }
         }
@@ -122,7 +136,9 @@ router.route('/carts/:item_id').delete((req, res)=>{
     //use GET https://se3316-hwu382-lab3-hwu382.c9users.io/carts/id
     Cart.findById(req.params.item_id, (err, item)=>{
         if (err) res.send(err);
-        else res.json(item);
+        else {
+            res.header('Access-Control-Allow-Origin','*');
+            res.json(item);}
     });
 });
 
