@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "https://se3316-hwu382-lab3-hwu382.c9users.io:8081",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "info"
+    }
+}

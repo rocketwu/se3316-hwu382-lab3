@@ -15,7 +15,7 @@ export class CartDBService {
 
 
   getItems():Observable<Item[]>{
-    return this.httpclient.get<Item[]>('https://se3316-hwu382-lab3-hwu382.c9users.io/carts');
+    return this.httpclient.get<Item[]>('https://se3316-hwu382-lab3-hwu382.c9users.io:8081/carts');
   }
 
   // addItem(item:Item):Observable<Item>{
@@ -34,7 +34,7 @@ export class CartDBService {
     })};
 
     let body="name="+item.name+"&price="+item.price+"&tax="+item.tax;
-    return this.httpclient.post<string>('https://se3316-hwu382-lab3-hwu382.c9users.io/carts',body,httpOptions);
+    return this.httpclient.post<string>('https://se3316-hwu382-lab3-hwu382.c9users.io:8081/carts',body,httpOptions);
 
   }
 
