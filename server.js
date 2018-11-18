@@ -8,9 +8,11 @@ var Cart    = require('./app/models/cart');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+var port = 8081;
 
 var router = express.Router();
+
+//var proxy=require("http-proxy-middleware");
 
 router.use((req, res, next)=>{
     console.log('request received!');
@@ -142,12 +144,19 @@ router.route('/carts/:item_id').delete((req, res)=>{
     });
 });
 
-router.get('/', function(req, res) {
-    res.sendFile('/frontend/home.html', { root: __dirname });   //main page will be home
-});
+// router.get('/', function(req, res) {
+//     res.sendFile('/frontend/src/index.html', { root: __dirname });   //main page will be home
+// });
 
-app.use('/',express.static('frontend'));    //provide access to get client.js
+//app.use('/',express.static('frontend'));    //provide access to get client.js
+// app.use('/angular', proxy({target: 'http://localhost:61234/'}))
+// app.use('/runtime.js', proxy({target: 'http://localhost:61234/'}))
+// app.use('/polyfills.js', proxy({target: 'http://localhost:61234/'}))
+// app.use('/styles.js', proxy({target: 'http://localhost:61234/'}))
+// app.use('/main.js', proxy({target: 'http://localhost:61234/'}))
+// app.use('/vendor.js', proxy({target: 'http://localhost:61234/'}))
+// app.use('/sockjs-node', proxy({target: 'http://localhost:61234/'}))
 
 
 app.use(router);
-app.listen(port);
+app.listen(port,()=>{console.log('server start')});
